@@ -1,0 +1,56 @@
+Test Case 1: Device Registration
+
+Input:
+Device ID = D001
+Device Name = SmartLight
+Device Type = Light
+
+Expected Result:
+Device should be registered successfully.
+
+
+Test Case 2: Device Status
+
+Input:
+Select View Device Status.
+
+Expected Result:
+Registered device information should be displayed.
+
+
+Test Case 3: Firmware Upload
+
+Input:
+Device ID = D001
+Firmware = update.bin
+
+Expected Result:
+Firmware file should be read and its size displayed.
+
+
+Test Case 4: Command Injection
+
+Input:
+Configuration command = echo ConfigurationUpdated
+
+Expected Result:
+Command is executed by the application.
+
+
+Test Case 5: Path Traversal
+
+Input:
+Filename containing ../
+
+Expected Result:
+Application should reject paths outside the firmware directory.
+
+
+Test Case 6: Missing Authentication
+
+Input:
+Select Configure Device without logging in.
+
+Expected Result:
+Application currently allows configuration without authentication.
+This demonstrates the missing authentication vulnerability.
