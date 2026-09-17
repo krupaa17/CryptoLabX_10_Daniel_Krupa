@@ -1,0 +1,4 @@
+venv/
+SAST_Lab/venv/
+__pycache__/
+*.pyc
