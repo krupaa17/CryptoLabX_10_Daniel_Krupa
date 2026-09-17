@@ -46,15 +46,15 @@ def analyze_file(filename):
 
 def menu():
     while True:
-        print("\n==========================")
+        print("\n------------------------")
         print("        CryptoLabX")
-        print("==========================")
+        print("------------------------")
         print("1. Encrypt")
         print("2. Decrypt")
         print("3. Attack")
         print("4. Analyze")
         print("5. Exit")
-        print("==========================")
+        print("------------------------")
 
         choice = input("Enter your choice: ")
 
