@@ -49,6 +49,20 @@ map<string, vector<int>> calculate_distances(const map<string, vector<int>>& pat
 
     return distances;
 }
+
+vector<int> find_factors(int number){
+    vector<int> factors;
+
+    for (int i = 2; i <= number; i++)
+    {
+        if (number % i == 0)
+        {
+            factors.push_back(i);
+        }
+    }
+
+    return factors;
+}
 int main(){
     ifstream input("../testcases/ciphertext.txt");
 
@@ -94,6 +108,52 @@ for (auto& entry : distances){
 
     for (int d : entry.second){
         cout << d << " ";
+    }
+
+    cout << "\n";
+}
+
+cout << "\n========================================\n";
+cout << " FACTORS OF KASISKI DISTANCES\n";
+cout << "========================================\n\n";
+
+for (auto& entry : distances)
+{
+    cout << "Pattern: " << entry.first << "\n";
+
+    for (int distance : entry.second)
+    {
+        cout << "Distance " << distance << ": ";
+
+        vector<int> factors = find_factors(distance);
+
+        for (int f : factors)
+        {
+            cout << f << " ";
+        }
+
+        cout << "\n";
+    }
+
+    cout << "\n";
+
+cout << " FACTORS OF KASISKI DISTANCES\n";
+
+for (auto& entry : distances){
+    cout << "Pattern: " << entry.first << "\n";
+
+    for (int distance : entry.second)
+    {
+        cout << "Distance " << distance << ": ";
+
+        vector<int> factors = find_factors(distance);
+
+        for (int f : factors)
+        {
+            cout << f << " ";
+        }
+
+        cout << "\n";
     }
 
     cout << "\n";
