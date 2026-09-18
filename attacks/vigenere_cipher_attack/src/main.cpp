@@ -1,16 +1,11 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-
-string clean_ciphertext(string text)
-{
+string clean_ciphertext(string text) {
     string cleaned = "";
 
-    for (char ch : text)
-    {
-        if (isalpha(static_cast<unsigned char>(ch)))
-        {
+    for (char ch : text) {
+        if (isalpha(static_cast<unsigned char>(ch))) {
             cleaned += toupper(static_cast<unsigned char>(ch));
         }
     }
@@ -18,22 +13,22 @@ string clean_ciphertext(string text)
     return cleaned;
 }
 
-map<string, vector<int>> find_repeated_patterns(const string& ciphertext){
+map<string, vector<int>> find_repeated_patterns(const string& ciphertext) {
     map<string, vector<int>> patterns;
-
     int sequence_length = 3;
 
-    for (int i = 0; i <= (int)ciphertext.length() - sequence_length; i++){
+    for (int i = 0; i <= (int)ciphertext.length() - sequence_length; i++) {
         string pattern = ciphertext.substr(i, sequence_length);
         patterns[pattern].push_back(i);
     }
 
     return patterns;
 }
-map<string, vector<int>> calculate_distances(const map<string, vector<int>>& patterns){
+
+map<string, vector<int>> calculate_distances(const map<string, vector<int>>& patterns) {
     map<string, vector<int>> distances;
 
-    for (const auto& entry : patterns){
+    for (const auto& entry : patterns) {
         const string& pattern = entry.first;
         const vector<int>& positions = entry.second;
 
@@ -42,7 +37,6 @@ map<string, vector<int>> calculate_distances(const map<string, vector<int>>& pat
 
         for (size_t i = 1; i < positions.size(); i++) {
             int distance = positions[i] - positions[i - 1];
-
             distances[pattern].push_back(distance);
         }
     }
@@ -50,23 +44,66 @@ map<string, vector<int>> calculate_distances(const map<string, vector<int>>& pat
     return distances;
 }
 
-vector<int> find_factors(int number){
+vector<int> find_factors(int number) {
     vector<int> factors;
 
-    for (int i = 2; i <= number; i++)
-    {
-        if (number % i == 0)
-        {
+    for (int i = 2; i <= number; i++) {
+        if (number % i == 0) {
             factors.push_back(i);
         }
     }
 
     return factors;
 }
-int main(){
+
+int kasiski_analysis(const string& ciphertext) {
+    map<string, vector<int>> patterns = find_repeated_patterns(ciphertext);
+    map<string, vector<int>> distances = calculate_distances(patterns);
+    map<int, int> factor_count;
+
+    for (const auto& entry : distances) {
+        for (int distance : entry.second) {
+            vector<int> factors = find_factors(distance);
+
+            for (int factor : factors) {
+                if (factor <= 20) {
+                    factor_count[factor]++;
+                }
+            }
+        }
+    }
+
+    cout << "\n========================================\n";
+    cout << "          KASISKI ANALYSIS\n";
+    cout << "========================================\n\n";
+    cout << "Candidate Key Lengths:\n\n";
+
+    int best_length = 0;
+    int best_count = 0;
+
+    for (const auto& entry : factor_count) {
+        cout << "Length " << entry.first << " -> "
+             << entry.second << " occurrences\n";
+
+        if (entry.second > best_count) {
+            best_count = entry.second;
+            best_length = entry.first;
+        }
+    }
+
+    if (best_length == 0) {
+        cout << "\nCould not determine key length using Kasiski test.\n";
+    } else {
+        cout << "\nEstimated Key Length: " << best_length << "\n";
+    }
+
+    return best_length;
+}
+
+int main() {
     ifstream input("../testcases/ciphertext.txt");
 
-    if (!input){
+    if (!input) {
         cout << "Unable to open ciphertext.txt\n";
         return 1;
     }
@@ -74,23 +111,34 @@ int main(){
     string text;
     string line;
 
-    while (getline(input, line)) text += line;
+    while (getline(input, line)) {
+        text += line;
+    }
 
     input.close();
-    cout << " VIGENERE CIPHER CRYPTANALYSIS\n";
+
+    cout << "========================================\n";
+    cout << "    VIGENERE CIPHER CRYPTANALYSIS\n";
+    cout << "========================================\n\n";
 
     string ciphertext = clean_ciphertext(text);
-    cout << "Cleaned ciphertext length: "<< ciphertext.length() << "\n\n";
 
-    map<string, vector<int>> patterns =find_repeated_patterns(ciphertext);
+    cout << "Cleaned ciphertext length: "
+         << ciphertext.length() << "\n\n";
 
-    cout << " REPEATED PATTERNS\n";
+    map<string, vector<int>> patterns =
+        find_repeated_patterns(ciphertext);
 
-    for (auto& entry : patterns){
-        if (entry.second.size() >= 2){
-            cout << "Pattern: " << entry.first << " | Positions: ";
+    cout << "========================================\n";
+    cout << "         REPEATED PATTERNS\n";
+    cout << "========================================\n\n";
 
-            for (int position : entry.second){
+    for (const auto& entry : patterns) {
+        if (entry.second.size() >= 2) {
+            cout << "Pattern: " << entry.first
+                 << " | Positions: ";
+
+            for (int position : entry.second) {
                 cout << position << " ";
             }
 
@@ -99,65 +147,57 @@ int main(){
     }
 
     map<string, vector<int>> distances =
-    calculate_distances(patterns);
+        calculate_distances(patterns);
 
-cout << " KASISKI DISTANCES\n";
+    cout << "\n========================================\n";
+    cout << "         KASISKI DISTANCES\n";
+    cout << "========================================\n\n";
 
-for (auto& entry : distances){
-    cout << "Pattern: " << entry.first << " | Distances: ";
+    for (const auto& entry : distances) {
+        cout << "Pattern: " << entry.first
+             << " | Distances: ";
 
-    for (int d : entry.second){
-        cout << d << " ";
-    }
-
-    cout << "\n";
-}
-
-cout << "\n========================================\n";
-cout << " FACTORS OF KASISKI DISTANCES\n";
-cout << "========================================\n\n";
-
-for (auto& entry : distances)
-{
-    cout << "Pattern: " << entry.first << "\n";
-
-    for (int distance : entry.second)
-    {
-        cout << "Distance " << distance << ": ";
-
-        vector<int> factors = find_factors(distance);
-
-        for (int f : factors)
-        {
-            cout << f << " ";
+        for (int distance : entry.second) {
+            cout << distance << " ";
         }
 
         cout << "\n";
     }
 
-    cout << "\n";
+    cout << "\n========================================\n";
+    cout << "      FACTORS OF KASISKI DISTANCES\n";
+    cout << "========================================\n\n";
 
-cout << " FACTORS OF KASISKI DISTANCES\n";
+    for (const auto& entry : distances) {
+        cout << "Pattern: " << entry.first << "\n";
 
-for (auto& entry : distances){
-    cout << "Pattern: " << entry.first << "\n";
+        for (int distance : entry.second) {
+            cout << "Distance " << distance << ": ";
 
-    for (int distance : entry.second)
-    {
-        cout << "Distance " << distance << ": ";
+            vector<int> factors = find_factors(distance);
 
-        vector<int> factors = find_factors(distance);
+            for (int f : factors) {
+                cout << f << " ";
+            }
 
-        for (int f : factors)
-        {
-            cout << f << " ";
+            cout << "\n";
         }
 
         cout << "\n";
     }
 
-    cout << "\n";
-}
+    int key_length = kasiski_analysis(ciphertext);
+
+    cout << "\n========================================\n";
+    cout << "             RESULT\n";
+    cout << "========================================\n";
+
+    if (key_length > 0) {
+        cout << "Estimated Key Length = "
+             << key_length << "\n";
+    } else {
+        cout << "Key length could not be determined.\n";
+    }
 
     return 0;
 }
