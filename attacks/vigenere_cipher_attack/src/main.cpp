@@ -30,6 +30,25 @@ map<string, vector<int>> find_repeated_patterns(const string& ciphertext){
 
     return patterns;
 }
+map<string, vector<int>> calculate_distances(const map<string, vector<int>>& patterns){
+    map<string, vector<int>> distances;
+
+    for (const auto& entry : patterns){
+        const string& pattern = entry.first;
+        const vector<int>& positions = entry.second;
+
+        if (positions.size() < 2)
+            continue;
+
+        for (size_t i = 1; i < positions.size(); i++) {
+            int distance = positions[i] - positions[i - 1];
+
+            distances[pattern].push_back(distance);
+        }
+    }
+
+    return distances;
+}
 int main(){
     ifstream input("../testcases/ciphertext.txt");
 
@@ -64,6 +83,21 @@ int main(){
             cout << "\n";
         }
     }
+
+    map<string, vector<int>> distances =
+    calculate_distances(patterns);
+
+cout << " KASISKI DISTANCES\n";
+
+for (auto& entry : distances){
+    cout << "Pattern: " << entry.first << " | Distances: ";
+
+    for (int d : entry.second){
+        cout << d << " ";
+    }
+
+    cout << "\n";
+}
 
     return 0;
 }
