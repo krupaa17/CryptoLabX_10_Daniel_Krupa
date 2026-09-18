@@ -46,6 +46,36 @@ Intentionally introduced vulnerabilities:
 
 The application was analyzed using Semgrep.
 
+### Assignment 4 — Shift Cipher Cryptanalysis
+
+* Implemented Shift Cipher encryption and decryption.
+* Added brute-force dictionary scoring.
+* Added chi-square analysis.
+* Added comparison test cases and output instructions.
+
+### Assignment 5 — Vigenere Cryptanalysis
+
+* Implemented Kasiski examination and distance factor analysis.
+* Added Index of Coincidence calculations.
+* Added group frequency analysis and probable key recovery.
+* Added decryption and re-encryption verification.
+
+### Assignment 6 — Monoalphabetic Substitution Cryptanalysis
+
+* Implemented substitution encryption and decryption.
+* Added letter and word frequency analysis.
+* Added repeated-letter pattern analysis.
+* Added partial plaintext display and solution verification.
+
+## Lab Progress Checklist
+
+- [x] Assignment 1: CLI and text analysis
+- [x] Assignment 2: Semgrep vulnerable program
+- [x] Assignment 3: IoT Device Management
+- [x] Assignment 4: Shift Cipher cryptanalysis
+- [x] Assignment 5: Vigenere cryptanalysis
+- [x] Assignment 6: Monoalphabetic substitution cryptanalysis
+
 ## Project Structure
 
 ```text
