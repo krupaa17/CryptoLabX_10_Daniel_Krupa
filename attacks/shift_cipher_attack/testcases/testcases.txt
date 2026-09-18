@@ -1,0 +1,14 @@
+Test Case 1
+Plaintext: this is a test message with the letter frequency of the english language
+Key: 7
+Expected: dictionary scoring and chi-square analysis recover key 7
+
+Test Case 2
+Plaintext: hello world this is a shift cipher example
+Key: 13
+Expected: encryption and decryption preserve the text
+
+Test Case 3
+Plaintext: short text
+Key: 5
+Expected: statistical attacks may require manual comparison because the sample is short
