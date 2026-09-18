@@ -1,0 +1,44 @@
+Introduction to Modern Cryptography
+key space, i.e., the set of all possible keys that can be output by Gen, and
+require K to be finite. The encryption algorithm Enc takes as input a key
+k ∈ K and a message m ∈ M, and outputs a ciphertext c; we denote this
+by Enck(m). The encryption algorithm may be probabilistic, so that Enck(m)
+might output a different ciphertext when run multiple times. To emphasize
+this, we write c ← Enck(m) to denote the (possibly probabilistic) process by
+which message m is encrypted using key k to give ciphertext c. (In case Enc
+is deterministic, we may emphasize this by writing c := Enck(m).) We let C
+denote the set of all possible ciphertexts that can be output by Enck(m), for
+all possible choices of k ∈ K and m ∈ M (and for all random choices of Enc
+in case it is randomized). The decryption algorithm Dec takes as input a key
+k ∈ K and a ciphertext c ∈ C and outputs a message m ∈ M. Throughout
+the book, we assume encryption schemes are perfectly correct; that is, that
+for all k ∈ K, m ∈ M, and any ciphertext c output by Enck(m), it holds
+that Deck(c) = m with probability 1. This implies that we may assume Dec
+is deterministic without loss of generality (since Deck(c) must give the same
+output every time it is run). We will thus write m := Deck(c) to denote the
+process of decrypting ciphertext c using key k.
+In the definitions and theorems below, we refer to probability distributions
+over K, M, and C. The distribution over K is simply the one that is defined
+by running Gen and taking the output. For k ∈ K, we let Pr[K = k] denote
+the probability that the key output by Gen is equal to k. (Formally, K is a
+random variable denoting the value of the key.) Similarly, for m ∈ M we let
+Pr[M = m] denote the probability that the message that is sent is equal to m.
+That the message is being chosen according to some distribution (rather than
+being fixed) is meant to model the fact that, at least from the point of view
+of the adversary, different messages may have different probabilities of being
+sent. (If the adversary knows what message is being sent, then it doesn’t need
+to decrypt anything and there is no need for the parties to use encryption!)
+As an example, the adversary may know that the encrypted message is either attack tomorrow or don’t attack. Furthermore, the adversary may
+even know (by other means) that with probability 0.7 the message will be a
+command to attack and with probability 0.3 the message will be a command
+not to attack. In this case, we have Pr[M = attack tomorrow] = 0.7 and
+Pr[M = don’t attack] = 0.3.
+We assume that the distributions over K and M are independent, i.e., that
+the key and message are chosen independently. This is required because the
+key is chosen and fixed (i.e., shared by the communicating parties) before the
+message is known. Actually, recall that the distribution over K is fixed by the
+encryption scheme itself (since it is defined by Gen) while the distribution over
+M may vary depending on the parties who are using the encryption scheme.
+For c ∈ C, we write Pr[C = c] to denote the probability that the ciphertext
+is c. Note that, given Enc, the distribution over C is fixed by the distributions
+over K and M

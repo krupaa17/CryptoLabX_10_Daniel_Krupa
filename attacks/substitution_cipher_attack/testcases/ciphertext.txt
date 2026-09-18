@@ -1,0 +1,44 @@
+Ofzkgrxezogf zg Dgrtkf Eknhzgukqhin
+atn lhqet, o.t., zit ltz gy qss hgllowst atnl ziqz eqf wt gxzhxz wn Utf, qfr
+ktjxokt A zg wt yofozt. Zit tfeknhzogf qsugkozid Tfe zqatl ql ofhxz q atn
+a ∈ A qfr q dtllqut d ∈ D, qfr gxzhxzl q eohitkztbz e; vt rtfgzt ziol
+wn Tfea(d). Zit tfeknhzogf qsugkozid dqn wt hkgwqwosolzoe, lg ziqz Tfea(d)
+douiz gxzhxz q royytktfz eohitkztbz vitf kxf dxszohst zodtl. Zg tdhiqlomt
+ziol, vt vkozt e ← Tfea(d) zg rtfgzt zit (hgllowsn hkgwqwosolzoe) hkgetll wn
+vioei dtllqut d ol tfeknhztr xlofu atn a zg uoct eohitkztbz e. (Of eqlt Tfe
+ol rtztkdofolzoe, vt dqn tdhiqlomt ziol wn vkozofu e := Tfea(d).) Vt stz E
+rtfgzt zit ltz gy qss hgllowst eohitkztbzl ziqz eqf wt gxzhxz wn Tfea(d), ygk
+qss hgllowst eigoetl gy a ∈ A qfr d ∈ D (qfr ygk qss kqfrgd eigoetl gy Tfe
+of eqlt oz ol kqfrgdomtr). Zit rteknhzogf qsugkozid Rte zqatl ql ofhxz q atn
+a ∈ A qfr q eohitkztbz e ∈ E qfr gxzhxzl q dtllqut d ∈ D. Zikgxuigxz
+zit wgga, vt qllxdt tfeknhzogf leitdtl qkt htkytezsn egkktez; ziqz ol, ziqz
+ygk qss a ∈ A, d ∈ D, qfr qfn eohitkztbz e gxzhxz wn Tfea(d), oz igsrl
+ziqz Rtea(e) = d vozi hkgwqwosozn 1. Ziol odhsotl ziqz vt dqn qllxdt Rte
+ol rtztkdofolzoe vozigxz sgll gy utftkqsozn (lofet Rtea(e) dxlz uoct zit lqdt
+gxzhxz tctkn zodt oz ol kxf). Vt voss zixl vkozt d := Rtea(e) zg rtfgzt zit
+hkgetll gy rteknhzofu eohitkztbz e xlofu atn a.
+Of zit rtyofozogfl qfr zitgktdl wtsgv, vt ktytk zg hkgwqwosozn rolzkowxzogfl
+gctk A, D, qfr E. Zit rolzkowxzogf gctk A ol lodhsn zit gft ziqz ol rtyoftr
+wn kxffofu Utf qfr zqaofu zit gxzhxz. Ygk a ∈ A, vt stz Hk[A = a] rtfgzt
+zit hkgwqwosozn ziqz zit atn gxzhxz wn Utf ol tjxqs zg a. (Ygkdqssn, A ol q
+kqfrgd cqkoqwst rtfgzofu zit cqsxt gy zit atn.) Lodosqksn, ygk d ∈ D vt stz
+Hk[D = d] rtfgzt zit hkgwqwosozn ziqz zit dtllqut ziqz ol ltfz ol tjxqs zg d.
+Ziqz zit dtllqut ol wtofu eigltf qeegkrofu zg lgdt rolzkowxzogf (kqzitk ziqf
+wtofu yobtr) ol dtqfz zg dgrts zit yqez ziqz, qz stqlz ykgd zit hgofz gy cotv
+gy zit qrctklqkn, royytktfz dtllqutl dqn iqct royytktfz hkgwqwosozotl gy wtofu
+ltfz. (Oy zit qrctklqkn afgvl viqz dtllqut ol wtofu ltfz, zitf oz rgtlf’z fttr
+zg rteknhz qfnziofu qfr zitkt ol fg fttr ygk zit hqkzotl zg xlt tfeknhzogf!)
+Ql qf tbqdhst, zit qrctklqkn dqn afgv ziqz zit tfeknhztr dtllqut ol tozitk qzzqea zgdgkkgv gk rgf’z qzzqea. Yxkzitkdgkt, zit qrctklqkn dqn
+tctf afgv (wn gzitk dtqfl) ziqz vozi hkgwqwosozn 0.7 zit dtllqut voss wt q
+egddqfr zg qzzqea qfr vozi hkgwqwosozn 0.3 zit dtllqut voss wt q egddqfr
+fgz zg qzzqea. Of ziol eqlt, vt iqct Hk[D = qzzqea zgdgkkgv] = 0.7 qfr
+Hk[D = rgf’z qzzqea] = 0.3.
+Vt qllxdt ziqz zit rolzkowxzogfl gctk A qfr D qkt ofrthtfrtfz, o.t., ziqz
+zit atn qfr dtllqut qkt eigltf ofrthtfrtfzsn. Ziol ol ktjxoktr wteqxlt zit
+atn ol eigltf qfr yobtr (o.t., liqktr wn zit egddxfoeqzofu hqkzotl) wtygkt zit
+dtllqut ol afgvf. Qezxqssn, kteqss ziqz zit rolzkowxzogf gctk A ol yobtr wn zit
+tfeknhzogf leitdt ozltsy (lofet oz ol rtyoftr wn Utf) viost zit rolzkowxzogf gctk
+D dqn cqkn rthtfrofu gf zit hqkzotl vig qkt xlofu zit tfeknhzogf leitdt.
+Ygk e ∈ E, vt vkozt Hk[E = e] zg rtfgzt zit hkgwqwosozn ziqz zit eohitkztbz
+ol e. Fgzt ziqz, uoctf Tfe, zit rolzkowxzogf gctk E ol yobtr wn zit rolzkowxzogfl
+gctk A qfr D
