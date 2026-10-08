@@ -67,6 +67,11 @@ The application was analyzed using Semgrep.
 * Added repeated-letter pattern analysis.
 * Added partial plaintext display and solution verification.
 
+### Assignment 7 — AES-CBC Padding Oracle Attack
+
+* Added a key-isolated PKCS#7 padding oracle and a generic CBC plaintext recovery attack.
+* Added a runnable demonstration, oracle query counting, boundary-case tests, and prevention guidance.
+
 ## Lab Progress Checklist
 
 - [x] Assignment 1: CLI and text analysis
@@ -75,6 +80,7 @@ The application was analyzed using Semgrep.
 - [x] Assignment 4: Shift Cipher cryptanalysis
 - [x] Assignment 5: Vigenere cryptanalysis
 - [x] Assignment 6: Monoalphabetic substitution cryptanalysis
+- [x] Assignment 7: AES-CBC padding oracle attack
 
 ## Project Structure
 
