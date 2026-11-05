@@ -72,6 +72,12 @@ The application was analyzed using Semgrep.
 * Added a key-isolated PKCS#7 padding oracle and a generic CBC plaintext recovery attack.
 * Added a runnable demonstration, oracle query counting, boundary-case tests, and prevention guidance.
 
+### Assignment 9 — Operating-System Randomness
+
+* Added Linux `/dev/urandom` and OpenSSL `rand` capture, plus a Windows .NET cryptographic RNG capture script.
+* Added a notebook comparing byte and bit frequencies, runs, repeated patterns, serial correlation, and statistical tests.
+* Documented OS generator management, statistical-test limitations, and cryptographic recommendations.
+
 ## Lab Progress Checklist
 
 - [x] Assignment 1: CLI and text analysis
@@ -81,6 +87,7 @@ The application was analyzed using Semgrep.
 - [x] Assignment 5: Vigenere cryptanalysis
 - [x] Assignment 6: Monoalphabetic substitution cryptanalysis
 - [x] Assignment 7: AES-CBC padding oracle attack
+- [x] Assignment 9: Operating-system random-number analysis
 
 ## Project Structure
 

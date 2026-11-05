@@ -2,3 +2,4 @@ venv/
 SAST_Lab/venv/
 __pycache__/
 *.pyc
+/randomness_assessment/generated/
