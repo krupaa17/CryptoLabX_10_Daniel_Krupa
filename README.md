@@ -1,133 +1,125 @@
 # CryptoLabX
 
-CryptoLabX is a modular cryptanalysis toolkit being developed as part of the Cryptography Laboratory course. The project will gradually be extended throughout the semester with classical cryptography, cryptanalysis attacks, mathematical utilities, modern cryptography and statistical analysis modules.
+**Course:** Cryptography Laboratory (22CPP307)
+**Group:** 10
+**SAST Tool:** Semgrep
+**Application:** IoT Device Management
 
-### Week 1 
+## About
 
-The objective of Week 1 is to establish the basic project structure and software foundation. No cryptographic algorithms are implemented in this version.
+CryptoLabX is a modular cryptography and security toolkit developed as part of the Cryptography Laboratory. The project is being developed progressively through laboratory assignments.
 
-## Team Members
+## Assignments
 
-1. Krupa Joshi 
-2. Daniel
+### Assignment 1 — CryptoLabX Toolkit
+
+* Created the project structure and Git repository.
+* Developed a menu-driven CLI.
+* Implemented text-file analysis.
+* Added character, word, line and letter-frequency analysis.
+* Added execution logging.
+* Added sample datasets.
+* Documented the project.
+
+### Assignment 2 — SAST
+
+* Installed and configured **Semgrep**.
+* Created an intentionally vulnerable Python program.
+* Performed static security analysis.
+* Generated a JSON Semgrep report.
+* Documented SAST findings and terminal logs.
+
+### Assignment 3 — IoT Device Management
+
+Developed a small console-based IoT application with:
+
+* Device registration
+* Device status monitoring
+* Firmware upload
+* Device configuration
+
+Intentionally introduced vulnerabilities:
+
+* Command Injection
+* Path Traversal
+* Missing Authentication
+
+The application was analyzed using Semgrep.
+
+### Assignment 4 — Shift Cipher Cryptanalysis
+
+* Implemented Shift Cipher encryption and decryption.
+* Added brute-force dictionary scoring.
+* Added chi-square analysis.
+* Added comparison test cases and output instructions.
+
+### Assignment 5 — Vigenere Cryptanalysis
+
+* Implemented Kasiski examination and distance factor analysis.
+* Added Index of Coincidence calculations.
+* Added group frequency analysis and probable key recovery.
+* Added decryption and re-encryption verification.
+
+### Assignment 6 — Monoalphabetic Substitution Cryptanalysis
+
+* Implemented substitution encryption and decryption.
+* Added letter and word frequency analysis.
+* Added repeated-letter pattern analysis.
+* Added partial plaintext display and solution verification.
+
+### Assignment 7 — AES-CBC Padding Oracle Attack
+
+* Added a key-isolated PKCS#7 padding oracle and a generic CBC plaintext recovery attack.
+* Added a runnable demonstration, oracle query counting, boundary-case tests, and prevention guidance.
+
+## Lab Progress Checklist
+
+- [x] Assignment 1: CLI and text analysis
+- [x] Assignment 2: Semgrep vulnerable program
+- [x] Assignment 3: IoT Device Management
+- [x] Assignment 4: Shift Cipher cryptanalysis
+- [x] Assignment 5: Vigenere cryptanalysis
+- [x] Assignment 6: Monoalphabetic substitution cryptanalysis
+- [x] Assignment 7: AES-CBC padding oracle attack
 
 ## Project Structure
 
 ```text
 CryptoLabX/
-├── classical/      # Classical cryptography algorithms
-├── attacks/        # Cryptanalysis and attack techniques
-├── math/           # Mathematical utilities
-├── modern/         # Modern cryptography modules
-├── analysis/       # Statistical and frequency analysis
-├── datasets/       # Input text files and datasets
-├── outputs/        # Generated outputs
-├── docs/           # Project documentation
-├── tests/          # Testing files
-├── utils/          # Utility functions
-├── main.py         # Main command-line interface
-├── README.md       # Project documentation
-└── requirements.txt # Project dependencies
+├── classical/
+├── modern/
+├── hashing/
+├── attacks/
+├── analysis/
+├── docs/
+├── datasets/
+├── outputs/
+├── utils/
+├── tests/
+│
+├── secure_application/
+│   ├── src/
+│   ├── reports/
+│   ├── screenshots/
+│   ├── sast/
+│   ├── outputs/
+│   ├── testcases/
+│   ├── firmware/
+│   └── README.md
+│
+├── main.py
+├── README.md
+└── requirements.txt
 ```
-
-## Current Features
-
-The Week 1 version provides:
-
-* Menu-driven command-line interface
-* Encrypt option
-* Decrypt option
-* Attack option
-* Analyze option
-* Exit option
-* Text file analysis
-* Character counting
-* Unique character counting
-* Letter frequency analysis
-* Execution logging
-* Dataset management
-
-The Encrypt, Decrypt and Attack modules currently display "Coming Soon".
-
-## File Analysis
-
-The Analyze option reads a text file from the `datasets` folder and calculates:
-
-* Number of characters
-* Number of words
-* Number of lines
-* Number of unique characters
-* Frequency of each alphabetic letter
-
-## Logging
-
-CryptoLabX maintains a log file named `crypto.log`.
-
-The log records:
-
-* Date
-* Time
-* Selected menu option
-
-Example:
-
-```text
-2026-09-17 20:30:10 - Selected Option: Analyze
-2026-09-17 20:31:05 - Selected Option: Exit
-```
-
-## Future Modules
-
-Future versions of CryptoLabX will include:
-
-### Classical Cryptography
-
-* Caesar Cipher
-* Monoalphabetic Substitution
-* Vigenere Cipher
-* Playfair Cipher
-* Hill Cipher
-* Transposition Ciphers
-
-### Cryptanalysis Attacks
-
-* Frequency Analysis
-* Brute Force
-* Known Plaintext Attacks
-* Statistical Attacks
-
-### Mathematical Utilities
-
-* Modular Arithmetic
-* GCD
-* Extended Euclidean Algorithm
-* Modular Inverse
-* Prime Number Utilities
-
-### Modern Cryptography
-
-* Symmetric Encryption
-* Public-Key Cryptography
-* Hash Functions
-* Digital Signatures
-
-### Analysis
-
-* Frequency Analysis
-* Entropy
-* Statistical Analysis
 
 ## Technologies
 
 * Python
-* Git
-* GitHub
+* Git & GitHub
+* Semgrep
+* Linux/WSL
 * Command Line Interface
-
-## Version Control
-
-The project uses Git for version control. Each team member should make meaningful commits during development.
 
 ## Conclusion
 
-CryptoLabX provides the foundation for a reusable cryptanalysis toolkit. The Week 1 implementation focuses on project organization, command-line interaction, file handling, logging and documentation. Cryptographic algorithms will be added in future assignments.
+CryptoLabX provides a foundation for learning cryptography, cryptanalysis, secure coding, and static security testing through practical laboratory assignments.
